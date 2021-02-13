@@ -1,5 +1,5 @@
 const form = document.querySelector("#newTaskData")
-
+document.addEventListener('DOMContentLoaded', Store.DisplayTaskList());
 
 
 // Add Event Listners
@@ -70,7 +70,9 @@ function addNewTask(e) {
     if (vTitle != '' && vStartDate != '' && vStartTime != '' && vEndDate != '' && vEndTime != '') {
         const task = new Task(vId, vTitle, vDescription, vStartDate, vStartTime, vEndDate, vEndTime);
         UI.AddNewTaskInTaskList(task);
+        Store.AddNewTask(task);
         UI.Notice('Valid data!', 'success');
+        UI.ClearFields();
     }else{
         UI.Notice('Please enter valid data!', 'error');
     }

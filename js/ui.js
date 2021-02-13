@@ -31,4 +31,8 @@ class UI {
             currentAlert.remove();
         }
     }
+
+    static ClearFields(){
+        document.querySelector("#title").value = description = document.querySelector("#description").value = startDate = document.querySelector("#date").value = startTime = document.querySelector("#time").value = endDate = document.querySelector("#edate").value = endTime = document.querySelector("#etime").value = vTitle = vDescription = vStartDate = vStartTime = vEndDate = vEndTime = '';
+    }
 }
